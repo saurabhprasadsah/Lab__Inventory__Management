@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+LIMS | Sample Tracking Log (FO-114)
+{% endblock %}
+{% block Content %}
+Sample Tracking Log (FO-114)
+{% endblock %}
+{% block body %}
+
+        <hr style="margin-top: 60px;">
+         </hr>
+         <div class="" style="margin:10px;width: 100%;">
+         <!-------------Filter Elements-------------------------------------->   
+         <form class="search-form" action="">
+            <div class="" style="float: left;">
+               <label for="gsearch">Sample ID :</label>
+               <input class="search-input" type="" id="gsearch" name="gsearch">
+               <br>
+               <!-- <input class="search-input" type="" id="gsearch" name="gsearch">
+                  <label for="gsearch"> : Work Group ID</label><br> -->
+               <button class="white-button"><i class="fa fa-filter"></i> Filter </button>
+               <button class="search-reset"><i class="fa fa-refresh"></i><a href="" style="color: white;"> Refresh </a></button>
+            </div>
+         </form>
+         <br><br><br><br><br><br><br><br>
+         <!-------------------------------------------------------------------------------->
+         <!-- Buttons For Add New Sample and Download Excel.  -->
+         <div>
+            <a href="\SampleTrackingLog">
+            <button class="search-reset"><i class="fa fa-eye"></i> Sample Tracking Log 
+            </button>
+            </a>
+         </div>
+         <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+               <tr >
+                  <th>Sample ID</th>
+                  <th>Sample_Name</th>
+                  <th>Date</th>
+                  <th>Matrix</th>
+                  <th>Batch Number</th>
+                  <th>Sample Size</th>
+                  <th>Batch Size</th>
+                  <th>Distributor/Micro business Name</th>
+                  <th>Distributor/Micro business License #</th>
+                  <!-- <th>Actions</th> -->
+                  <!-- <th>Salary</th> -->
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>2652521-1</td>
+                  <td>Turpentine Oil</td>
+                  <td>07042023</td>
+                  <td>kiv</td>
+                  <td>hdsgds-25225</td>
+                  <td>30</td>
+                  <td>61</td>
+                  <td>Toranto Chemical</td>
+                  <td>Lwtrwrw-121314</td>
+                  <!-- <td> <a href="Sample Intake Form.html"><button class="white-button"><i class="fa fa-edit"></i></button></a></td> -->
+               </tr>
+            </tbody>
+         </table>
+         <div style="padding: 20px;">
+            <form action="" class="intake-form" style="width: 1000px;">
+               <div class="container">
+                  <div style="padding: 20px;">
+                     <h4>Select The Test Required For The Sample :</h4>
+                     <hr style="border-width: 2px;">
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Cannabinoids Potency Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="cnn1" onclick="cann()">
+                        </div>
+                        <div class="form-group" id="cnn" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-CANN " ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input"  style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Water Activity Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="waa1" onclick="waa()">
+                        </div>
+                        <div class="form-group" id="waa" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-WA" ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Micro Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="ma1" onclick="ma()">
+                        </div>
+                        <div class="form-group" id="ma" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-MA" ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Pesticides and Mycotoxins Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="pma1" onclick="pma()">
+                        </div>
+                        <div class="form-group" id="pma" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-PESMYC" ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Residual Solvents Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="rsa1" onclick="rsa()">
+                        </div>
+                        <div class="form-group" id="rsa" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-RS" ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Foreign Material Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="ffm1" onclick="ffm()">
+                        </div>
+                        <div class="form-group" id="ffm" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-FFM " ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd"> Moisture Content Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="mc1" onclick="mc()">
+                        </div>
+                        <div class="form-group" id="mc" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-MC" ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <div>
+                        <div class="form-group">
+                           <label for="pwd">Heavy Metals Analysis :</label>
+                           <input class="checkboform" type="checkbox" id="hma1" onclick="hma()">
+                        </div>
+                        <div class="form-group" id="hma" style="display:none">
+                           <label for="pwd">Workgroup ID :</label>
+                           <input type="" class="search-input" style="width: 40%;" id="pwd" placeholder="062223-001-HM" ><br>
+                           <label for="pwd">Sample weight :</label>
+                           <input type="" class="search-input" style="width: 39%;" id="pwd" placeholder="" >
+                        </div>
+                        <hr style="border-width: 2px;">
+                     </div>
+                     <button  class="search-reset" style="background-color: green;"><i class="fa fa-save" ></i><a href="" style="color: white;"> Save </a></button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </section>
+      <script>
+         function ffm() {
+           var checkBox = document.getElementById("ffm1");
+           var text = document.getElementById("ffm");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         
+         function cann() {
+             var checkBox = document.getElementById("cnn1");
+           var text = document.getElementById("cnn");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         
+         function hma() {
+           var checkBox = document.getElementById("hma1");
+           var text = document.getElementById("hma");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         
+         function ma() {
+           var checkBox = document.getElementById("ma1");
+           var text = document.getElementById("ma");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         
+         function pma() {
+           var checkBox = document.getElementById("pma1");
+           var text = document.getElementById("pma");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         function rsa() {
+           var checkBox = document.getElementById("rsa1");
+           var text = document.getElementById("rsa");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         
+         function waa() {
+           var checkBox = document.getElementById("waa1");
+           var text = document.getElementById("waa");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+         
+         function mc() {
+           var checkBox = document.getElementById("mc1");
+           var text = document.getElementById("mc");
+           if (checkBox.checked == true){
+             text.style.display = "block";
+           } else {
+              text.style.display = "none";
+           }
+         }
+      </script>
+      <!-- Link JS -->
+      {% endblock %}

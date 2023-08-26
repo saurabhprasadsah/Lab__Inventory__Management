@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+LIMS |EDIT Chain of Custody form (FO-063)
+
+{% endblock %}
+
+{% block Content %}
+
+ EDIT Chain of Custody form (FO-063)
+{% endblock %}
+
+{% block body %}
+
+<hr style="margin-top: 60px;">
+</hr>
+<div class="" style="margin:10px;width: 100%;">
+   <!-------------------------- Buttons------------------------- -->
+   <div>
+      <a href="\editfrom ">
+         <button class="search-reset"><i class="fa fa-eye"></i> update Chain of Custody forms
+         </button>
+      </a>
+   </div>
+   <form action="" method="Post">
+      {% csrf_token %}
+   <!-------------------------------------------------------------------------------->
+   <div style="padding-left: 20px;">
+      <form action="" class="intake-form" style="width: 700px;">
+         <div class="container">
+            <div style="padding: 20px;">
+               <div class="form-group">
+                  <label for="Date">Date:</label>
+                  <input class="search-input" size="40" type="date"  name="Date" value="{{data.Date}}">
+               </div>
+               <div class="form-group">
+                  <label for="pwd">Client ID:</label>
+                  <input class="search-input" size="40" type="te"  name="Client_ID" value="{{data.Client_ID}}"
+                     placeholder="Enter Client ID"><br>
+               </div>
+               <div class="form-group">
+                  <label for="pwd">Order of the Form cronology:</label>
+                  <input class="search-input" size="10" type="number" min="1"  name="Order_of_the_Form" value="{{data.Order_of_the_Form}}"
+                     placeholder="Order of the Form">
+               </div>
+               <div class="form-group">
+                  <label for="pwd">COC File:</label>
+                  <input class="search-input" size="40" type="file"  name="COC_File_Upload" value="{{data.COC_File_Upload}}"
+                     placeholder="Enter Client ID">
+               </div>
+               <button type="submit" class="search-reset" style="background-color: green;"><i class="fa fa-save"></i>
+                  Save</button>
+            </div>
+         </div>
+      </form>
+   </div>
+   </section>
+   {% endblock %}

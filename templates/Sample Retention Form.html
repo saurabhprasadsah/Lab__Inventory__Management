@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+LIMS | Sample Retention Form (FO-044)
+{% endblock %}
+{% block Content %}
+Sample Retention Form (FO-044)
+{% endblock %}
+{% block body %}
+
+
+        <hr style="margin-top: 60px;">
+         </hr>
+
+        <!-------------Filter Elements-------------------------------------->
+        <div class="" style="margin:10px;width: 100%;">
+                <div>
+                 <form class="search-form" style="width:500px ;">
+                    <div class="" style="width: 400px;">
+                       <label for="gsearch"> Sample ID :</label>
+                       <input class="search-input" size="30" type="" id="gsearch" name="gsearch"><br>
+                       <button class="white-button"><i class="fa fa-filter"></i> Filter </button>
+                       <button class="search-reset"><i class="fa fa-refresh"></i><a href="" style="color: white;"> Refresh </a></button>
+                    </div>
+                 </form>
+                 <br><br><br><br><br><br><br>
+            </div>
+        </div>
+
+                 <!-- Buttons For Add New Sample and Download Excel.  -->
+         <div class="" style="margin:10px;width: 100%;">
+         <div>
+            <a href="\SampleRetainLog">
+            <button class="search-reset"><i class="fa fa-eye"></i> Sample Retention Log 
+            </button>
+            </a>
+          </div>
+         <div style="padding: 20px;">
+            <form action="" class="intake-form" style="width: 900px;">
+               <div class="container">
+                  <div style="padding: 20px;">
+                     <div class="form-group">
+                        <label for="email">Date :</label>
+                        <input class="search-input" size="40" type="date" id="gsearch" name="gsearch">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Sample ID :</label>
+                        <input class="search-input" size="40" type="" id="client_id" placeholder="062223-001" style="width: 40%;">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Sample Name :</label>
+                        <input class="search-input" type="" id="client_id" placeholder="062223-001" style="width: 70%;">
+                     </div>                     
+                     <div class="form-group">
+                        <label for="pwd">Matrix :</label>
+                        <input class="search-input"  list="suggestions" style="width: 40%;" required> 
+                        <datalist style="position: absolute;" id="suggestions">
+                           <option>Flower</option>
+                           <option>Kief</option>
+                           <option>Concentrate</option>
+                           <option>Edible</option>
+                           <option>Topical</option>
+                        </datalist>
+                        
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Batch Number :</label>
+                        <input class="search-input" id="" placeholder="" style="width: 40%;">
+                     </div>                     
+                     <div class="form-group">
+                        <label for="pwd">Sample Size :</label>
+                        <input class="search-input" id="" placeholder="" style="width: 42%;">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Batch Size :</label>
+                        <input class="search-input" style="width: 21%;">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Distributor/ Micro business Name :</label>
+                        <input class="search-input" style="width: 50%;" placeholder="Enter Distributor/ Micro business Name">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Distributor / Micro business License # :</label>
+                        <input class="search-input" style="width: 47%;" placeholder="Enter Distributor / Micro business License #">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Chain of Custody Number :</label>
+                        <input class="search-input" style="width: 30%;">
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Days Retailed :</label>
+                        <input class="search-input" style="width: 30%;" value="30 Days" readonly>
+                     </div>
+                     <div class="form-group">
+                        <label for="pwd">Disposal Status :</label>
+                        <select class="search-input" style="width: 30%;" name="Disposal Status" id="">
+                            <option style="color: red;" value="Pending">Pending</option>
+                            <option style="color: green;" value="Completed">Disposed/Completed</option>
+                          </select>
+                     </div>                                         
+                     <button  class="search-reset" style="background-color: green;"><i class="fa fa-save" ></i><a href="" style="color: white;"> Save </a></button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </section>
+      {% endblock %}
