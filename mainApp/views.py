@@ -55,11 +55,12 @@ def chain_of_custody_form(Request):
 
 
 def SampleIntakelog(Request):
-    #  if(Request.method=="POST"):
-    #     search = Request.POST.get('search')
-    #     data = ChainOfCustody.objects.filter(Q(Date__icontains=search)|Q(Client_ID__icontains=search))
-        # return render(Request,"Sample Intake log.html",{'data':data})
-     return render(Request, "Sample Intake log.html")
+    data = SampleIntakeForm.objects.all()
+    data = SampleIntakeForm.objects.all().order_by("id")
+    paginator = Paginator(data, 1)
+    page_number = Request.GET.get("page")
+    page_obj = paginator.get_page(page_number) 
+    return render(Request, "Sample Intake log.html",{'data':page_obj})
 
 
 
@@ -88,8 +89,6 @@ def Sample_Intake_Form(Request):
         s.save()
         return render(Request, "Sample Intake log.html")
      return render(Request,"Sample Intake Form.html")
-
-
 
 
 
