@@ -106,10 +106,11 @@ def editsampleform(Request,id):
             s.Chain_of_Custody_Number =  Request.POST.get("Chain_of_Custody_Number")
             s.save()
             return render(Request, "Sample Intake log.html")
-        else:     
-            return render(Request, "Editsampleintakeform.html",{'data':data})
+        return render(Request, "Editsampleintakeform.html",{'data':data})
     except:
-        return render(Request, "Sample Intake log.html")
+        pass
+
+    return render(Request, "Sample Intake log.html")
 
 
 
