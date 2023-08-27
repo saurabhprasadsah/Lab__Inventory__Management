@@ -55,7 +55,7 @@ def chain_of_custody_form(Request):
 def SampleIntakelog(Request):
     data = SampleIntakeForm.objects.all()
     data = SampleIntakeForm.objects.all().order_by("id")
-    paginator = Paginator(data, 1)
+    paginator = Paginator(data, 10)
     page_number = Request.GET.get("page")
     page_obj = paginator.get_page(page_number) 
     return render(Request, "Sample Intake log.html",{'data':page_obj})

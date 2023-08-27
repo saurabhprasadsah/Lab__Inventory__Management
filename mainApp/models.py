@@ -39,6 +39,8 @@ class SampleIntakeForm(models.Model):
     Chain_of_Custody_Number = models.CharField(max_length=300, unique=False, verbose_name='Chain of Custody Number')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.Client_ID
     
     def save(self, *args, **kwargs):
         super(SampleIntakeForm, self).save(*args, **kwargs)
