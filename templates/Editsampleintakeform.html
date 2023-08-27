@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-LIMS |  Edit Sample Intake Form (FO-043)
+LIMS | Edit Sample Intake Form (FO-043)
 {% endblock %}
 {% block Content %}
-  EDIT Sample Intake Form (FO-043)
+EDIT Sample Intake Form (FO-043)
 {% endblock %}
 {% block body %}
 <hr style="margin-top: 60px;">
@@ -35,21 +35,22 @@ LIMS |  Edit Sample Intake Form (FO-043)
                <div style="padding: 20px;">
                   <div class="form-group">
                      <label for="Date">Date :</label>
-                     <input class="search-input" size="40" type="date" id="Date" name="Date" value="Date">
+                     <input class="search-input" size="40" type="date" id="Date" name="Date" value="{{data.Date}}">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Sample ID :</label>
-                     <input class="search-input" size="40" type="number" id="Sample_ID"  name="Sample_ID" value="Sample_ID"
-                        placeholder="062223-001" style="width: 40%;">
+                     <input class="search-input" size="40" type="number" id="Sample_ID" name="Sample_ID"
+                        value="{{data.Sample_ID}}" placeholder="062223-001" style="width: 40%;">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Sample Name :</label>
-                     <input class="search-input" type="text" id="client_id" name="Sample_Name" value="Sample_Name" placeholder="062223-001"
-                        style="width: 70%;">
+                     <input class="search-input" type="text" id="client_id" name="Sample_Name"
+                        value="{{data.Sample_Name}}" style="width: 70%;">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Matrix :</label>
-                     <input class="search-input" list="suggestions" name="Matrix" value="Matrix" style="width: 40%;" required>
+                     <input class="search-input" list="suggestions" name="Matrix" value="{{data.Matrix}}"
+                        style="width: 40%;" required>
                      <datalist style="position: absolute;" id="suggestions">
                         <option>Flower</option>
                         <option>Kief</option>
@@ -61,36 +62,41 @@ LIMS |  Edit Sample Intake Form (FO-043)
                   </div>
                   <div class="form-group">
                      <label for="pwd">Batch Number :</label>
-                     <input class="search-input" id="client_id" name="Batch_Number" value="Batch_Number" placeholder="" style="width: 40%;">
+                     <input class="search-input" id="client_id" name="Batch_Number" value="{{data.Batch_Number}}"
+                        style="width: 40%;">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Sample Size :</label>
-                     <input class="search-input" id="client_id" name="Sample_Size" value="Sample_Size" placeholder="" style="width: 42%;">
+                     <input class="search-input" id="client_id" name="Sample_Size" value="{{data.Sample_Size}}"
+                        style="width: 42%;">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Batch Size :</label>
-                     <input class="search-input" style="width: 21%;" id="client_id" name="Batch_Size" value="Batch_Size">
+                     <input class="search-input" style="width: 21%;" id="client_id" name="Batch_Size"
+                        value="{{data.Batch_Size}}">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Distributor/ Micro business Name :</label>
                      <input class="search-input" style="width: 50%;" name="Distributor_Micro_business_Name"
-                        placeholder="Enter Distributor/ Micro business Name" value="Distributor_Micro_business_Name">
+                        value="{{data.Distributor_Micro_business_Name}}">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Distributor / Micro business License # :</label>
                      <input class="search-input" style="width: 47%;" name="Distributor_Micro_business_License_No"
-                        placeholder="Distributor/Micro business License #" value="Distributor_Micro_business_License_No">
+                        value="{{data.Distributor_Micro_business_License_No}}">
                   </div>
                   <div class="form-group">
                      <label for="pwd">Chain of Custody Number :</label>
-                     <input class="search-input" name="Chain_of_Custody_Number" style="width: 30%;" value="Chain_of_Custody_Number">
+                     <input class="search-input" name="Chain_of_Custody_Number" style="width: 30%;"
+                        value="{{data.Chain_of_Custody_Number}}">
                   </div>
                </div>
                <button type="submit" class="search-reset" style="background-color: green;"><i class="fa fa-save"></i>
                   Save</button>
-               </div>
             </div>
-         </form>
+      </div>
+      
+   </form>
    </form>
 </div>
 </section>

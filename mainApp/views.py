@@ -107,7 +107,7 @@ def editsampleform(Request,id):
             s.save()
             return render(Request, "Sample Intake log.html")
         else:     
-            return render(Request, "Editsampleintakeform.html")
+            return render(Request, "Editsampleintakeform.html",{'data':data})
     except:
         return render(Request, "Sample Intake log.html")
 
