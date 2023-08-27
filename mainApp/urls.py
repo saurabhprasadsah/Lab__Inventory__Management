@@ -12,16 +12,12 @@ urlpatterns = [
     path('chain_of_custody_form/', chain_of_custody_form),
     path('edit/<int:id>/', editrecord),
     path('SampleIntakelog/', SampleIntakelog),
-
-    # path('searchPage/',searchPage,name="search"),
-
+    path('editsampleform/<int:id>/',editsampleform),
     path('Sample_Intake_Form/', Sample_Intake_Form),
-    
     path('SampleTrackingLog/', SampleTrackingLog),
     path('SampleTrackingForm/', SampleTrackingForm),
     path('SampleRetainLog/', SampleRetainLog),
-    path('SampleRetainForm/', SampleRetainForm),    
-    
+    path('SampleRetainForm/', SampleRetainForm),       
 ]
 
 app_name = 'labs'

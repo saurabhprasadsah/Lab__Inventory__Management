@@ -74,7 +74,8 @@ Sample Intake Log (FO-043)
          <td>{{item.Distributor_Micro_business_Name}}</td>
          <td>{{item.Distributor_Micro_business_License_No}}</td>
          <td>{{item.Chain_of_Custody_Number}}</td>
-         <td> <a href="\SampleIntakeForm"><button class="white-button"><i class="fa fa-edit"></i></button></a></td>
+         <td><a href="/editsampleform/{{item.id}}"><button class="white-button"><i class="fa fa-edit"></i></button></a></td>
+
       </tr>
       {% endfor %}
    </tbody>

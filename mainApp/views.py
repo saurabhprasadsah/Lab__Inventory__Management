@@ -39,8 +39,6 @@ def editrecord(Request,id):
 def chain_of_custody_form(Request):
     if(Request.method =="POST"):
         c = ChainOfCustody()
-        #e.name (name) will be same as the database models name.
-        #POST.get("name") will be as the template name as the folder.
         c.Date =  Request.POST.get("Date")
         c.Client_ID =  Request.POST.get("Client_ID")
         c.Order_of_the_Form =  Request.POST.get("Order_of_the_Form")
@@ -89,6 +87,29 @@ def Sample_Intake_Form(Request):
         s.save()
         return render(Request, "Sample Intake log.html")
      return render(Request,"Sample Intake Form.html")
+
+
+def editsampleform(Request,id):
+    try:    
+        data = SampleIntakeForm.objects.get(id=id)
+        if(Request.method=="POST"):
+            s = SampleIntakeForm()
+            s.Date =  Request.POST.get("Date")
+            s.Sample_ID =  Request.POST.get("Sample_ID")
+            s.Sample_Name =  Request.POST.get("Sample_Name")
+            s.Matrix =  Request.POST.get("Matrix")
+            s.Batch_Number =  Request.POST.get("Batch_Number")
+            s.Sample_Size =  Request.POST.get("Sample_Size")
+            s.Batch_Size =  Request.POST.get("Batch_Size")
+            s.Distributor_Micro_business_Name =  Request.POST.get("Distributor_Micro_business_Name")
+            s.Distributor_Micro_business_License_No =  Request.POST.get("Distributor_Micro_business_License_No")
+            s.Chain_of_Custody_Number =  Request.POST.get("Chain_of_Custody_Number")
+            s.save()
+            return render(Request, "Sample Intake log.html")
+        else:     
+            return render(Request, "Editsampleintakeform.html")
+    except:
+        return render(Request, "Sample Intake log.html")
 
 
 
