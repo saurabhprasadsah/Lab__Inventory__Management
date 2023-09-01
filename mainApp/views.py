@@ -19,7 +19,7 @@ def chain_of_custody(Request):
     return render(Request,"Chain of Custody.html",{'data':page_obj})
 
 
-
+#chain of custody edit record
 def editrecord(Request,id):
     try:    
         data = ChainOfCustody.objects.get(id=id)
@@ -34,8 +34,7 @@ def editrecord(Request,id):
     except:
         return render(Request ,"Chain of Custody.html")
 
- 
-
+#chain of custody form
 def chain_of_custody_form(Request):
     if(Request.method =="POST"):
         c = ChainOfCustody()
