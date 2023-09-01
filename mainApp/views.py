@@ -3,13 +3,15 @@ from .models import *
 from django.core.paginator import Paginator
 from django.db.models import Q
 
-
+#login page
 def Login(Request):
     return render(Request,"Login.html")
 
+#HomePage form
 def homePage(Request):
     return render(Request,"home.html")
 
+#chain of chaincustody form
 def chain_of_custody(Request):
     data = ChainOfCustody.objects.all()
     data = ChainOfCustody.objects.all().order_by("id")
@@ -50,7 +52,7 @@ def chain_of_custody_form(Request):
 
 
 
-
+#sampleintakelog form
 def SampleIntakelog(Request):
     data = SampleIntakeForm.objects.all()
     data = SampleIntakeForm.objects.all().order_by("id")
