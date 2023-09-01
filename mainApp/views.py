@@ -71,7 +71,7 @@ def SampleIntakelog(Request):
 #     else:
 #         return HttpResponseRedirect("/")
 
-
+#sample intake form 
 def Sample_Intake_Form(Request):
      if(Request.method=="POST"):
         s = SampleIntakeForm()
@@ -89,7 +89,7 @@ def Sample_Intake_Form(Request):
         return render(Request, "Sample Intake log.html")
      return render(Request,"Sample Intake Form.html")
 
-
+#sample edit form
 def editsampleform(Request,id):
     try:    
         data = SampleIntakeForm.objects.get(id=id)
