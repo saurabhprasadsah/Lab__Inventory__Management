@@ -3,6 +3,7 @@ from .models import *
 from django.core.paginator import Paginator
 from django.db.models import Q
 
+
 #login page
 def Login(Request):
     return render(Request,"Login.html")
@@ -89,7 +90,7 @@ def Sample_Intake_Form(Request):
         return render(Request, "Sample Intake log.html")
      return render(Request,"Sample Intake Form.html")
 
-#sample edit form
+#sample edit form using function based
 def editsampleform(Request,id):
     try:    
         data = SampleIntakeForm.objects.get(id=id)
