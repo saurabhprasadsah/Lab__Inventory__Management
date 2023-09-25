@@ -13,6 +13,7 @@ def homePage(Request):
     return render(Request,"home.html")
 
 #chain of chaincustody form
+#using function based 
 def chain_of_custody(Request):
     data = ChainOfCustody.objects.all()
     data = ChainOfCustody.objects.all().order_by("id")
@@ -23,6 +24,7 @@ def chain_of_custody(Request):
 
 
 #chain of custody edit record
+#using function based editrecord
 def editrecord(Request,id):
     try:    
         data = ChainOfCustody.objects.get(id=id)
@@ -38,6 +40,7 @@ def editrecord(Request,id):
         return render(Request ,"Chain of Custody.html")
 
 #chain of custody form
+#using function based form
 def chain_of_custody_form(Request):
     if(Request.method =="POST"):
         c = ChainOfCustody()
@@ -54,6 +57,7 @@ def chain_of_custody_form(Request):
 
 
 #sampleintakelog form
+#using function intakelog form
 def SampleIntakelog(Request):
     data = SampleIntakeForm.objects.all()
     data = SampleIntakeForm.objects.all().order_by("id")
@@ -73,6 +77,7 @@ def SampleIntakelog(Request):
 #         return HttpResponseRedirect("/")
 
 #sample intake form 
+#using function sample intake form
 def Sample_Intake_Form(Request):
      if(Request.method=="POST"):
         s = SampleIntakeForm()
@@ -91,6 +96,7 @@ def Sample_Intake_Form(Request):
      return render(Request,"Sample Intake Form.html")
 
 #sample edit form using function based
+#using function based editsampleform
 def editsampleform(Request,id):
     try:    
         data = SampleIntakeForm.objects.get(id=id)
