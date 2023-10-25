@@ -3,16 +3,16 @@ from .models import *
 from django.core.paginator import Paginator
 from django.db.models import Q
 
-#login page
+#Login Page
 def Login(Request):
     return render(Request,"Login.html")
 
-#HomePage form
+#HomePage Form
 def homePage(Request):
     return render(Request,"home.html")
 
-#chain of chaincustody form
-#using function based 
+#Chain of chaincustody form
+#Using function based 
 def chain_of_custody(Request):
     data = ChainOfCustody.objects.all()
     data = ChainOfCustody.objects.all().order_by("id")
@@ -21,8 +21,8 @@ def chain_of_custody(Request):
     page_obj = paginator.get_page(page_number) 
     return render(Request,"Chain of Custody.html",{'data':page_obj})
 
-#chain of custody edit record
-#using function based editrecord
+#Chain of custody edit record.
+#Using function based editrecord.
 def editrecord(Request,id):
     try:    
         data = ChainOfCustody.objects.get(id=id)
@@ -37,8 +37,8 @@ def editrecord(Request,id):
     except:
         return render(Request ,"Chain of Custody.html")
 
-#chain of custody form
-#using function based form
+#Chain of custody form
+#Using function based form
 def chain_of_custody_form(Request):
     if(Request.method =="POST"):
         c = ChainOfCustody()
@@ -52,8 +52,8 @@ def chain_of_custody_form(Request):
         return render(Request,'Chain of Custody.html')    
     return render(Request, 'Chain of Custody Form.html')
 
-#sampleintakelog form
-#using function intakelog form
+#Sampleintakelog form
+#Using function intakelog form
 def SampleIntakelog(Request):
     data = SampleIntakeForm.objects.all()
     data = SampleIntakeForm.objects.all().order_by("id")
@@ -72,8 +72,8 @@ def SampleIntakelog(Request):
 #     else:
 #         return HttpResponseRedirect("/")
 
-#sample intake form 
-#using function sample intake form
+#Sample intake form 
+#Using function sample intake form
 def Sample_Intake_Form(Request):
      if(Request.method=="POST"):
         s = SampleIntakeForm()
@@ -91,8 +91,8 @@ def Sample_Intake_Form(Request):
         return render(Request, "Sample Intake log.html")
      return render(Request,"Sample Intake Form.html")
 
-#sample edit form using function based
-#using function based editsampleform
+#Sample edit form using function based
+#Using function based editsampleform
 def editsampleform(Request,id):
     try:    
         data = SampleIntakeForm.objects.get(id=id)
