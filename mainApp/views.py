@@ -3,7 +3,6 @@ from .models import *
 from django.core.paginator import Paginator
 from django.db.models import Q
 
-
 #login page
 def Login(Request):
     return render(Request,"Login.html")
@@ -21,7 +20,6 @@ def chain_of_custody(Request):
     page_number = Request.GET.get("page")
     page_obj = paginator.get_page(page_number) 
     return render(Request,"Chain of Custody.html",{'data':page_obj})
-
 
 #chain of custody edit record
 #using function based editrecord
@@ -53,8 +51,6 @@ def chain_of_custody_form(Request):
             c.save()
         return render(Request,'Chain of Custody.html')    
     return render(Request, 'Chain of Custody Form.html')
-
-
 
 #sampleintakelog form
 #using function intakelog form
@@ -117,19 +113,7 @@ def editsampleform(Request,id):
         return render(Request, "Editsampleintakeform.html",{'data':data})
     except:
         pass
-
     return render(Request, "Sample Intake log.html")
-
-
-
-
-
-
-
-
-
-
-
 
 
 
