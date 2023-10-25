@@ -20,9 +20,8 @@ urlpatterns = [
 
     
     path('SampleTrackingLog/', SampleTrackingLog),
-    path('SampleTrackingForm/', SampleTrackingForm),
+    path('SampletrackingForm/', SampletrackingForm),
     path('SampleRetainLog/', SampleRetainLog),
     path('SampleRetainForm/', SampleRetainForm),       
 ]
-
 app_name = 'labs'
