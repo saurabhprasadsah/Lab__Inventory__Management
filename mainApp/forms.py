@@ -2,7 +2,7 @@ from django import forms
 from .models import *
 
 class ChainOfCustody(forms.ModelForm):
-    class Meta: #meta will be represent the innner class Employeeform
+    class Meta: #Meta will be represent the innner class Employeeform
         model =ChainOfCustody
         fields= ['Date','Client_ID','Order_of_the_Form','COC_File_Upload']
         widgets= {

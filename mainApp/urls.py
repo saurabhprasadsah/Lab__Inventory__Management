@@ -7,7 +7,6 @@ app_name= "mainapp"
 urlpatterns = [
     path('',Login),
     path("upload",chain_of_custody_form, name="uploads"),
-
     path('homepage/', homePage),
     path('chain_of_custody/', chain_of_custody),
     path('chain_of_custody_form/', chain_of_custody_form),

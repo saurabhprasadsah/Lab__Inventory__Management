@@ -117,7 +117,6 @@ def editsampleform(Request,id):
 
 
 
-
 def SampleTrackingLog(Request):
     return render(Request,"Sample Tracking Log.html")
 
